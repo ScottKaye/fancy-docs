@@ -4,6 +4,9 @@ Just install [PrinceXML](https://www.princexml.com/) edit `compile.js` with a fe
 - `style.css` is for the overall style
 - `layout.html` is for including other template-related things, where the only thing special is the `$content$` string, which is replaced with parsed markdown
 
+## Preview
+![](preview.png)
+
 ## Tech
 - [markdown-it](https://github.com/markdown-it/markdown-it)
 - [PrinceXML](https://www.princexml.com/)
