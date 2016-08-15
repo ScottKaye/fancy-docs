@@ -1,0 +1,322 @@
+/* Prince margins and margin background */
+@page {
+	margin: 10mm 25mm;
+	background: #2b303b;
+}
+/* Makes browser testing a bit more friendly */
+@media screen {
+	body {
+		max-width: calc(8.5in - 50mm);
+		margin: 0 auto;
+	}
+	body::before {
+		content: "Screen preview, will look better as PDF";
+		white-space: pre-wrap;
+		text-align: right;
+		position: fixed;
+		bottom: 0.5em;
+		right: 1em;
+		width: 3in;
+		font-size: 18pt;
+		opacity: 0.5;
+		color: #000;
+		font-weight: 300;
+	}
+	.header-image {
+		margin-top: 100px !important;
+	}
+}
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+html {
+	-webkit-print-color-adjust: exact;
+}
+body {
+	background-color: #2b303b;
+	color: #c0c5ce;
+	font-family: Segoe UI, sans-serif;
+	text-rendering: optimizeLegibility !important;
+	font-size: 10pt;
+}
+header {
+	margin: 0 0 1em 0;
+	color: #c0c5ce;
+	font-weight: 400;
+	font-size: 2em;
+	padding: 5mm 0;
+	line-height: 1.3em;
+	position: relative;
+	page-break-before: always;
+}
+header:first-of-type {
+	margin-top: 3em;
+	page-break-before: initial;
+}
+header::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -25mm;
+	right: -25mm;
+	background: rgba(0,0,0,0.1);
+	z-index: -1;
+}
+header::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -25mm;
+	bottom: 0;
+	left: 50%;
+	background: url(images/decal.svg) no-repeat;
+	background-position: bottom right;
+	z-index: -1;
+}
+header i.fa {
+	position: absolute;
+	top: 40%;
+	left: -2em;
+	color: #575c65;
+}
+header small {
+	display: block;
+	font-size: 0.5em;
+}
+.content {
+	display: table;
+	width: 100%;
+}
+a {
+	color: #529fff;
+	font-weight: 600;
+	text-decoration: none;
+}
+a::after {
+	content: "\f0c1";
+	font-family: FontAwesome;
+	font-weight: 400;
+	margin-left: 0.25em;
+	font-size: 8pt;
+	vertical-align: top;
+}
+h1, h2, h3 {
+	font-weight: 400;
+	margin-bottom: 0;
+	position: relative;
+	clear: both;
+}
+h1 {
+	font-size: 1.8em;
+	font-weight: 300;
+	font-family: Segoe UI Light;
+	margin-top: 1em;
+}
+h1::before {
+	content: "";
+	position: absolute;
+	top: 0.25em;
+	left: -15px;
+	width: 2px;
+	height: 0.95em;
+	background: #3280e1;
+}
+h1::after {
+	content: "";
+	position: absolute;
+	top: 0.25em;
+	left: -35px;
+	width: 20px;
+	height: 0.95em;
+	background: linear-gradient(270deg, #01487b, #2b303b);
+	z-index: -1;
+}
+h2 {
+	font-size: 1.5em;
+}
+h2::before {
+	content: "";
+	position: absolute;
+	top: 0.25em;
+	left: -15px;
+	width: 1px;
+	height: 0.95em;
+	background: #3aff6f;
+}
+h2 + p::before {
+	content: "";
+	position: absolute;
+	top: 0em;
+	left: -15px;
+	width: 1px;
+	height: 100%;
+	background: #3aff6f;
+}
+h3 {
+	padding-bottom: 3px;
+	border-bottom: 2px dashed rgba(0,0,0,0.25);
+}
+h1 a, h2 a, h3 a {
+	font-weight: 400;
+}
+p {
+	position: relative;
+	line-height: 1.6em;
+	margin: 0;
+	padding: 2mm 0;
+	text-align: justify;
+}
+code {
+	font-weight: 400;
+	font-size: 0.85em;
+	font-family: Fira Code Retina, monospace;
+	background: rgba(0,0,0,0.2);
+	padding: 2px 3px;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+pre.hljs {
+	font-family: Fira Code Retina, monospace;
+	padding: 1em;
+	line-height: 1.25em;
+	tab-size: 4;
+	white-space: pre-wrap;
+}
+pre code {
+	background: none;
+}
+.centered {
+	text-align: center;
+}
+.large {
+	font-size: 1.5em;
+}
+.hero {
+	float: none;
+	box-shadow: none;
+	max-width: 4in;
+	margin: 1.5in auto 1.5in auto;
+}
+li {
+	line-height: 1.5em;
+	margin-bottom: 0.5em;
+}
+h1 + p > img, h2 + p > img, h3 + p > img {
+	float: right;
+	margin-top: -1em;
+	margin-right: -15mm;
+	margin-left: 0.75cm;
+}
+img {
+	float: left;
+	max-width: 3in;
+	max-height: 2in;
+	margin-top: 0.5em;
+	margin-bottom: 0.5cm;
+	margin-left: -15mm;
+	margin-right: 0.75cm;
+}
+table {
+	width: 100%;
+	margin: 1em 0;
+	border-collapse: collapse;
+}
+th, td {
+	text-align: left;
+	padding: 5px 10px;
+	border: 1px solid #222;
+}
+th {
+	background: #4f758b;
+	color: #fff;
+}
+.colour-wrapper {
+	margin: 2em 0;
+	width: 32%;
+	font-weight: 300;
+	display: inline-block;
+}
+.colour-wrapper label {
+	display: inline-block;
+}
+.colour-wrapper label span {
+	display: block;
+	font-weight: 400;
+}
+.colour-block {
+	width: 1.5cm;
+	height: 1.5cm;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 1em;
+}
+.contact-card {
+	background: #3280e1;
+	color: #eee;
+	width: 5in;
+	margin: 0 auto;
+	display: table;
+	font-size: 1.5em;
+}
+.contact-card img {
+	max-width: 1in;
+	margin-left: -0.5in;
+}
+.contact-card ul {
+	list-style: none;
+	padding: 15px 0;
+	margin: 0;
+}
+.contact-card i.fa {
+	width: 1.2em;
+	color: #90b7e7;
+}
+.contact-card a {
+	color: inherit;
+	font-weight: 400;
+}
+blockquote {
+	background: #3280e1;
+	border-left: 2px solid #2d4e82;
+	margin: 10px 0;
+	padding: 5px 5px 5px 15px;
+	color: #e0e8fb;
+}
+q {
+	font-style: italic;
+	display: block;
+	color: #789922;
+}
+q::before {
+	content: ">";
+}
+q::after {
+	content: "";
+}
+.header-image {
+	width: 8.5in;
+	height: 2.5in;
+	background-size: cover;
+	background-position: center;
+	margin: -10mm 0 -107px -25mm;
+	page-break-before: always;
+}
+.header-image + header {
+	z-index: 1;
+	page-break-before: initial;
+}
+.header-image + header::before {
+	background: rgba(0,0,0,0.25);
+}
+.header-image + header::after {
+	display: none;
+}
+.header-image + header i.fa {
+	color: #ccc;
+}
+.header-image.darker + header {
+	color: #ddd;
+}
+.header-image.darker + header::before {
+	background: rgba(0,0,0,0.5);
+}

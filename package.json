@@ -1,0 +1,17 @@
+{
+  "name": "documentation-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "compile.js",
+  "scripts": {
+    "compile": "node compile",
+    "watch": "node compile watch"
+  },
+  "keywords": [],
+  "author": "Scott Kaye",
+  "devDependencies": {
+    "highlight.js": "^9.4.0",
+    "markdown-it": "^7.0.0",
+    "markdown-it-container": "^2.0.0"
+  }
+}
