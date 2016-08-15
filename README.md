@@ -1,5 +1,5 @@
 # Fancy Document Template
-Just install [PrinceXML](https://www.princexml.com/) edit `compile.js` with a few values, and run `node compile watch` to be on your way.
+Just install [PrinceXML](https://www.princexml.com/), edit `compile.js` with a few values, and run `node compile watch` to be on your way.
 
 - `style.css` is for the overall style
 - `layout.html` is for including other template-related things, where the only thing special is the `$content$` string, which is replaced with parsed markdown
